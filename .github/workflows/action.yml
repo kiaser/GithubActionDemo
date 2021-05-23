@@ -16,6 +16,5 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '3.1.x'
-      - name: Build & test
-        # Specify custom logger here
-        run: dotnet test --configuration Release --logger GitHubActions
+      - run: dotnet build ConsoleDemo
+      - run: dotnet test -l "console;verbosity=detailed" ConsoleDemo
